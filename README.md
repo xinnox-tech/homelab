@@ -16,32 +16,27 @@ This repo acts as a **public knowledge base**, helping you:
 ---
 
 
-## 📺 YouTube Series
-Each guide links back to its corresponding episode.
-
-
-### **Episode 1 — Installing Proxmox + ZFS Mirror + First LXC (Samba)**
-Guide: [/proxmox/install-guide](./proxmox/install-guide)
-
-
----
-
-
 ## 📁 Repository Contents
 ### **Proxmox**
-- Installation walkthroughs
-- LXC configuration
-- Storage setup (ZFS, LVM, mountpoints)
+- [Installation walkthroughs](./proxmox/install-guide)
+- [Storage setup (ZFS, LVM, mountpoints)](./proxmox/storage)
 
-
+---
 ### **Services**
-- Media stack (Arr Suite, Plex/Jellyfin/Emby)
-- Monitoring (Prometheus, Grafana, Loki)
-- Backups (Proxmox Backup Server, Borg, Restic)
+- [All Services List](./services)
+- [Adblock & DNS](./services/adblocks-dns) (COMING SOON)
+- [Authentication](./services/authentication) (COMING SOON)
+- [Backups](./services/backups) (COMING SOON)
+- [Code](./services/code) (COMING SOON)
+- [Dashboard](./services/dashboard) (COMING SOON)
+- [Documents](./services/documents) (COMING SOON)
+- [Media](./services/media) (COMING SOON)
+- [Monitoring](./services/monitoring) (COMING SOON)
+- [Storage](./services/storage)
 
-
+---
 ### **Templates**
-Reusable documentation templates.
+Reusable templates.
 
 
 ---
@@ -61,6 +56,18 @@ The idea is simple:
 
 ---
 
+
+## 📺 YouTube Series
+Each guide links back to its corresponding episode.
+
+
+### **Episode 1 — Installing Proxmox + ZFS Mirror + First LXC (Samba)**
+Guide:
+- [Proxmox Instalation](./proxmox/install-guide)
+- [Samba LXC](./services/storage/samba)
+
+
+---
 
 ## 🧩 Contributing
 Suggestions are welcome! Open an issue or submit a pull request.
