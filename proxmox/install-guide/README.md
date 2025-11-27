@@ -52,10 +52,11 @@ echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription" >
 apt update && apt full-upgrade -y
 ```
 
-Or can be done via GUI in 
+Or can be done via GUI in Datacenter, the node you created, go to updates, repositories.
+
+Disable the enterprise repositories, and add the no-subscription one.
 
 ---
-
 
 ## Done!
 Your Proxmox system is installed, updated, and ready for future services.
