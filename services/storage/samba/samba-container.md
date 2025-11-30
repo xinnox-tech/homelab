@@ -25,17 +25,17 @@ adduser [username] sudo
 
 ## Switch User
 ```
-su - [username]
+sudo su - [username]
 ```
 
 ## Set permissions
 ```
-chown -R [username]:[username] /share
+sudo chown -R [username]:[username] /share
 ```
 
 ## Install Samba
 ```
-apt install samba -y
+sudo apt install samba -y
 ```
 
 ## Configure Share
@@ -44,12 +44,12 @@ Can either make a backup and create a new one, or rewrite the one thats there.
 ### Create Copy
 ```
 cd /etc/samba
-mv smb.conf smb.conf.bk
+sudo mv smb.conf smb.conf.bk
 ```
 
 ### Replace/Edit
 Edit `/etc/samba/smb.conf`.
-Using `nano smb.conf`
+Using `sudo nano smb.conf`
 
 Replace everything with:
 ```
@@ -82,27 +82,25 @@ smbpasswd -a [username]
 ```
 ## Set services to auto start on reboot
 ```
-systemctl enable smbd
-systemctl enable nmbd
-systemctl restart smbd
-systemctl restart nmbd
+sudo systemctl enable smbd
+sudo systemctl restart smbd
 ```
 
 ## Install wsdd for Windows
 ```
-apt install wsdd
-apt install wsdd-server
+sudo apt install wsdd
+sudo apt install wsdd-server
 ```
 
 ## Allow services on firewall (if run into issues.)
 ```
-ufw allow OpenSSH
-ufw allow Samba
+sudo  allow OpenSSH
+sudo ufw allow Samba
 # following 3 are needed for wsdd
-ufw allow 3702/udp
-ufw allow 5357/tcp
-ufw allow 5358/tcp
+sudo ufw allow 3702/udp
+sudo ufw allow 5357/tcp
+sudo ufw allow 5358/tcp
 # Check ufw status
-ufw status
+sudo ufw status
 ```
 
