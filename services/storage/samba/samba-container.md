@@ -6,7 +6,7 @@ This LXC provides network-attached storage for future services.
 
 ## Create LXC
 
-- Debian 12 template   ( or prefer one)
+- Ubuntu 24 template   ( or prefer one)
 - 2 vCPU / 2GB RAM ( or more if needed )
 - Unprivileged
 - Mount dataset → `/mnt/storage`
@@ -30,7 +30,7 @@ su - [username]
 
 ## Set permissions
 ```
-sudo chown -R [username]:[username] /data
+chown -R [username]:[username] /share
 ```
 
 ## Install Samba
@@ -44,12 +44,12 @@ Can either make a backup and create a new one, or rewrite the one thats there.
 ### Create Copy
 ```
 cd /etc/samba
-sudo mv smb.conf smb.conf.bk
+mv smb.conf smb.conf.bk
 ```
 
 ### Replace/Edit
 Edit `/etc/samba/smb.conf`.
-Using `sudo nano smb.conf`
+Using `nano smb.conf`
 
 Replace everything with:
 ```
@@ -78,31 +78,31 @@ Replace everything with:
 
 ## Add your samba user
 ```
-sudo smbpasswd -a [username]
+smbpasswd -a [username]
 ```
 ## Set services to auto start on reboot
 ```
-sudo systemctl enable smbd
-sudo systemctl enable nmbd
-sudo systemctl restart smbd
-sudo systemctl restart nmbd
+systemctl enable smbd
+systemctl enable nmbd
+systemctl restart smbd
+systemctl restart nmbd
 ```
 
 ## Install wsdd for Windows
 ```
-sudo apt install wsdd
-sudo apt install wsdd-server
+apt install wsdd
+apt install wsdd-server
 ```
 
 ## Allow services on firewall (if run into issues.)
 ```
-sudo ufw allow OpenSSH
-sudo ufw allow Samba
+ufw allow OpenSSH
+ufw allow Samba
 # following 3 are needed for wsdd
-sudo ufw allow 3702/udp
-sudo ufw allow 5357/tcp
-sudo ufw allow 5358/tcp
+ufw allow 3702/udp
+ufw allow 5357/tcp
+ufw allow 5358/tcp
 # Check ufw status
-sudo ufw status
+ufw status
 ```
 
